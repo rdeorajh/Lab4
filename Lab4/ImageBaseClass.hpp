@@ -16,14 +16,12 @@ class ImageBase{
 	private:
 
 	string ImageFileName;        //holds the image file name;
-	string LogFileName;          //holds the annotations/comment file name
-
 
 	public:
 
 	void enterFileName();      //enter the file names
 	void displayImage(void);   // display the image to screen
-	void Annotate();           //append comments to logfile
+	void Annotate(string fileToAppend);    //append comments to logfile
 
 };
 
