@@ -24,14 +24,10 @@ void ImageBase::enterFileName(){
 
 	cin  >> ImageFileName;
 
-	cout << "What is the Patient's Log File's Name?";
-
-	cin  >> LogFileName;
-
 }
 
 
-void ImageBase::Annotate(){
+void ImageBase::Annotate(std::string fileToAppend){
 
 	ofstream fout("ImageSessionLog.txt",ios_base::app);
 	fout <<"--------------------------------------------------\n";
@@ -42,21 +38,38 @@ void ImageBase::Annotate(){
 
 	fout << "\nImage on File: " << ImageFileName;
 
-	cout << "Add your comments (MAX 100 Characters)";
 
 
-	string s="ooo";
+
+	string s;
 	string comment;
 
-int x=s.length();
+	cout <<"Who is appending? Please enter Name/ID";
 
-cout <<x;
+	cin.ignore();
+	getline(cin,s);
 
-	/*while(s.length()>0){     //add comment while it is less then 101 chars
-		getline(cin,s);
-		comment=comment+s+"\n";
-		}
-*/
+
+	fout<< "\nAuthored by:";
+	fout<< s;
+	fout<<"\n";
+
+	cout << "\nAdd your comments (MAX 100 Characters)";
+
+	  while(comment.length()<100){
+
+		  getline(cin,s);   //get the next line
+
+		  if(s.empty())       //is it empty?
+			 break;
+		  else
+			 comment=comment+s+"\n";         // if it isnt put it on the end.
+
+
+	  }
+
+
+
 	fout << comment;
 
 
