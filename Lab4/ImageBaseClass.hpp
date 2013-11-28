@@ -35,4 +35,4 @@ class ImageBase{
 
 
 
-#endif /* IMAGEBASECLASS_HPP_ */
+#endif /* IMAGEBASECLASS_HPP_*/
