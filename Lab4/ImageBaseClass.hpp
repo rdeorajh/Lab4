@@ -13,16 +13,20 @@ using namespace std;
 
 class ImageBase{
 
-	private:
+	protected:
 
 	string ImageFileName;        //holds the image file name;
+	int bitsAllocated;           //amount of bits needed for pixel sample
+	string summary;             //hold the summary for this object
 
 	public:
 
-	void enterFileName();      //enter the file names
+	ImageBase(string FILE,int Bits); //default constructor
+	ImageBase();
+	void userEnterData();      //Let the user enter the file name, and other data points;
 	void displayImage(void);   // display the image to screen
-	void Annotate(string fileToAppend);    //append comments to logfile
-
+	void Comment();    //append comments to logfile
+	void insertSummary(); //insert the comment by user.
 };
 
 
