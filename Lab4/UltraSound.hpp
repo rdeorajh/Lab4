@@ -17,13 +17,13 @@ class UltraSound: public ImageBase{
 
 	private:
 
-	double magneticFieldStrength;   //magnetic field strength of mri machine
-	bool angioFlag;                //did they use angio? 1 is yes, 0 is no
-	string imagedNucleus;        //what nucleus was used to image? usually 1H?
+	double frequency;   //frequency of pressure waves in GHz
+	bool colourData;                //was colour data available? 1 is yes, 0 is no
+	string anatomicPosition;        //Prone? Supine? Position of interest
 
 	public:
 	UltraSound();      //default constructor;
-	UltraSound(string FIle, int Bits, double mField, bool angio, string Nucleus); //constructor
+	UltraSound(string FIle, int Bits, double freq, bool cData, string aPosition); //constructor
 	void results();    //append image information and display image
 
 
